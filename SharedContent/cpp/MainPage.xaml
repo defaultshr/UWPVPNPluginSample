@@ -1,0 +1,60 @@
+﻿<!--
+//*********************************************************
+//
+// Copyright (c) Microsoft. All rights reserved.
+// This code is licensed under the MIT License (MIT).
+// THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+// IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+// PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*********************************************************
+-->
+
+<Page
+    x:Class="SDKTemplate.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SDKTemplate"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="HeaderPanel" Orientation="Horizontal">
+            <Border Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Grid.Row="0">
+                <ToggleButton Style="{StaticResource SymbolButton}" Click="Button_Click" VerticalAlignment="Top" Foreground="{ThemeResource ApplicationForegroundThemeBrush}">
+                    <ToggleButton.Content>
+                        <FontIcon x:Name="Hamburger" FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;" Margin="0,10,0,0"/>
+                    </ToggleButton.Content>
+                </ToggleButton>
+            </Border>
+            <!-- Use AutomationProperties.AccessibilityView to let a screen reader know that the image is purely decorative.
+                 (If the Image conveyed useful information we'd not use AccessibilityView, but instead provide a localized 
+                 name for the Image to convey its purpose.) -->
+            <Image x:Name="WindowsLogo" Stretch="None" Source="Assets/windows-sdk.png" Margin="0,15,0,0" AutomationProperties.AccessibilityView="Raw" />
+            <TextBlock x:Name="Header" Text="UWP VPN Plugin Sample" Style="{StaticResource TagLineTextStyle}" Margin="0,15,0,0" />
+        </StackPanel>
+        <Grid HorizontalAlignment="Center" Height="249" VerticalAlignment="Top" Width="384" Grid.Row="1">
+            <TextBlock Text="Remote Tunnel Host :" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,6,0,0" HorizontalAlignment="Left"/>
+            <TextBox x:Name="RemoteTunnelHost" Text="30.1.1.1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="138,0,0,0"/>
+            <TextBlock Text="Remote Tunnel Port :" TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="0,0,0,181" HorizontalAlignment="Left"/>
+            <TextBox x:Name="RemoteTunnelPort" Text="22122" VerticalAlignment="Top" Margin="138,42,0,0" HorizontalAlignment="Left"/>
+            <TextBlock Text="Local Tunnel Port :" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,135,0,0" HorizontalAlignment="Left"/>
+            <TextBox x:Name="LocalTunnelPort" Text="22121" VerticalAlignment="Top" Margin="138,130,0,0" HorizontalAlignment="Left"/>
+            <TextBlock Text="V4 VPN Address :" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,179,0,0" HorizontalAlignment="Left"/>
+            <TextBox x:Name="VPNInterfaceV4Addr" Text="10.1.2.1" VerticalAlignment="Top" Margin="138,174,0,0" HorizontalAlignment="Left"/>
+            <TextBlock Text="Local Tunnel Host :" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,93,0,0" HorizontalAlignment="Left"/>
+            <TextBox x:Name="LocalTunnelHost" Text="192.168.1.182" VerticalAlignment="Top" Margin="138,86,0,0" HorizontalAlignment="Left"/>
+            <TextBlock Text="Tunnel Subnet IP :" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,222,0,0" HorizontalAlignment="Left"/>
+            <TextBox x:Name="TunnelSubnetIP" Text="10.1.1.0" VerticalAlignment="Top" Margin="138,217,0,0" HorizontalAlignment="Left"/>
+            <TextBlock Text="Subnet Mask: " TextWrapping="Wrap" VerticalAlignment="Top" Margin="227,222,0,0" HorizontalAlignment="Left"/>
+            <TextBox x:Name="TunnelSubnetMask" Text="24" VerticalAlignment="Top" Margin="320,217,0,0" HorizontalAlignment="Left"/>
+            <Button x:Name="Update" Content="Update" HorizontalAlignment="Left" Margin="319,131,0,0" VerticalAlignment="Top" Click="Update_Click"/>
+        </Grid>
+    </Grid>
+</Page>
