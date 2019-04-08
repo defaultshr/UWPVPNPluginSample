@@ -14,3 +14,8 @@ This code makes use of C++/CX UWP interfaces and developed over VisualStudio 201
 // PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
 
 Also, the licencing terms of modified Microsoft sample application code holds true as well. However, even those are provided under MIT Licence (MIT).
+
+References:
+-----------
+. Following link has helpful answer in developing VPN client profile being created/deleted programatically.
+https://social.msdn.microsoft.com/Forums/windowsapps/en-US/26b089e4-2448-42d7-a4fd-0fe65629b352/uwp-questions-about-vpn-plugin?prof=required
